@@ -1,5 +1,8 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
+  <% if @cocktail.picture.attached? %>
+    <%= cl_image_tag @cocktail.picture.key, width: 400, height: 300, crop: :fill %>
+  <% end %>
   <hr>
 
   <h5>Recipe</h5>
