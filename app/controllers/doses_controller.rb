@@ -7,7 +7,7 @@ class DosesController < ApplicationController
     @dose = Dose.new(dose_params)
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.cocktail = @cocktail
-    if @dose.save
+    if @dose.save # action to save done even if in a if. If "if" missing, the uniquessness scope to ingredient prevent to create the dose.
       redirect_to cocktail_path(@cocktail)
     else
       render "cocktails/show"
