@@ -16,3 +16,8 @@ import 'bootstrap';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import { AOSInitializer }  from '../components/aos';
+
+window.addEventListener('turbolinks:load', () => {
+  AOSInitializer();
+});
